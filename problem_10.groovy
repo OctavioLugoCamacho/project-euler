@@ -1,9 +1,12 @@
 long sum = 0
-for(long i in 2..2000000) {
-	if(isPrime(i)) {
-		sum += i
-	}
-}
+sum = (2..2000000).collect { Long n ->
+  isPrime(n) ? n : 0
+}.sum()
+// for(long i in 2..2000000) {
+// 	if(isPrime(i)) {
+// 		sum += i
+// 	}
+// }
 println sum
 
 def boolean isPrime(long n) {
